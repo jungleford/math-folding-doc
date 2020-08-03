@@ -1,4 +1,3 @@
-# math-folding: 对折序列问题（Number Folding Problem） ![npm (scoped)](https://img.shields.io/npm/v/@jungleford/math-folding.svg)
 # Background: 对折序列问题（Number Folding Problem）
 
 (Chinese edition)
