@@ -98,7 +98,7 @@
 
 ### 块和锚点
 
-下面我们看看从已知的k次序列中的一个数字![](http://latex.codecogs.com/gif.latex?x_k_)及其位置![](http://latex.codecogs.com/gif.latex?P_k_=P%28x{_k_}%29)，如何推导出![](http://latex.codecogs.com/gif.latex?P_{k+1}_)：
+下面我们看看从已知的k次序列中的一个数字![](http://latex.codecogs.com/gif.latex?x_k)及其位置![](http://latex.codecogs.com/gif.latex?P_k_=P%28x{_k_}%29)，如何推导出![](http://latex.codecogs.com/gif.latex?P_{k+1})：
 
     首先，在进行k次折叠时，记数字x所在的“块”的序号为B(x)。
     由于1和2分别位于头尾，这里，定义
@@ -134,7 +134,7 @@
 
 此时我们就得到了**第一个迭代**：
 
-![](http://latex.codecogs.com/gif.latex?P_{k+1}_%28x%29=\begin{cases}2P_k_%28x%29,&\textrm{P%28x%29%20is%20even}\\\\2P_k_%28x%29-1,&\textrm{P%28x%29%20is%20odd}\end{cases})
+![](http://latex.codecogs.com/gif.latex?P_{k+1}%28x%29=\begin{cases}2P_k_%28x%29,&\textrm{P%28x%29%20is%20even}\\\\2P_k_%28x%29-1,&\textrm{P%28x%29%20is%20odd}\end{cases})
 
 这里除了P(1)和P(2)容易得知
 
@@ -182,27 +182,27 @@
 
     对于k次序列，对于分布在1和2之间的各块，有：对于块i的第一个数字，在k+1次序列中的相同位置处的数字是它的两倍。
 
-给定![](http://latex.codecogs.com/gif.latex?B_{k,i}_)，它的第一个数字（根据上面块的性质第一条，一定是个偶数）是**x**，那么在![](http://latex.codecogs.com/gif.latex?B_{k+1,i}_)中，第一个数字是**2x**，即
+给定![](http://latex.codecogs.com/gif.latex?B_{k,i})，它的第一个数字（根据上面块的性质第一条，一定是个偶数）是**x**，那么在![](http://latex.codecogs.com/gif.latex?B_{k+1,i})中，第一个数字是**2x**，即
 
-![](http://latex.codecogs.com/gif.latex?B_{k+1,i,1}_=2B_{k,i,1}_)
+![](http://latex.codecogs.com/gif.latex?B_{k+1,i,1}=2B_{k,i,1})
 
-这里我们记块**i**的第一个数字为![](http://latex.codecogs.com/gif.latex?B_{i,1}_)，第二个数字为![](http://latex.codecogs.com/gif.latex?B_{i,2}_)。而对于每个块的第二个数字（奇数）——
+这里我们记块**i**的第一个数字为![](http://latex.codecogs.com/gif.latex?B_{i,1})，第二个数字为![](http://latex.codecogs.com/gif.latex?B_{i,2})。而对于每个块的第二个数字（奇数）——
 
     对于k次序列的块i的第二个数字x，在k+1次序列中的相同位置处的数字是2x-1。
 
 即
 
-![](http://latex.codecogs.com/gif.latex?B_{k+1,i,2}_=2B_{k,i,2}_-1)
+![](http://latex.codecogs.com/gif.latex?B_{k+1,i,2}=2B_{k,i,2}-1)
 
 用值关系表示为，我们得到**第二个迭代**：
 
-![](http://latex.codecogs.com/gif.latex?V_{k+1}_%28x%29=\begin{cases}2V_k_%28x%29,&\textrm{x%20is%20even}\\\\2V_k_%28x%29-1,&\textrm{x%20is%20odd}\end{cases},\quad1<x\le2^k)
+![](http://latex.codecogs.com/gif.latex?V_{k+1}%28x%29=\begin{cases}2V_k_%28x%29,&\textrm{x%20is%20even}\\\\2V_k_%28x%29-1,&\textrm{x%20is%20odd}\end{cases},\quad1<x\le2^k)
 
 观察第一和第二迭代式，似乎长得完全一样啊？不对，其实它们是两个不同的等式。因为第一迭代式的条件是P(x)即**位置序号的奇偶性**；而第二迭代式的条件是**x本身的奇偶性**。但是却可以得出形式完全相同的迭代关系，这也从另一个角度揭示了前面总结过的**对称性**。
 
 如果换算成数字的位置关系，则应该是：
 
-![](http://latex.codecogs.com/gif.latex?\begin{cases}P_{k+1}_%282x%29=P_k_%28x%29,&\textrm{x%20is%20even}\\\\P_{k+1}_%282x-1%29=P_k_%28x%29,&\textrm{x%20is%20odd}\end{cases},\quad1<x\le2^k)
+![](http://latex.codecogs.com/gif.latex?\begin{cases}P_{k+1}%282x%29=P_k_%28x%29,&\textrm{x%20is%20even}\\\\P_{k+1}%282x-1%29=P_k_%28x%29,&\textrm{x%20is%20odd}\end{cases},\quad1<x\le2^k)
 
 至此，k+1次序列的前一半的所有块的数字，都可以从k次序列完全推出！
 
@@ -256,9 +256,9 @@
 
    ......
 
-   ![](http://latex.codecogs.com/gif.latex?P_k_%284i%29=P_{k-1}%282i%29=P_{k-2}_%28i%29,\qquad\qquad1\le%20i\le%202^{k-2})
+   ![](http://latex.codecogs.com/gif.latex?P_k_%284i%29=P_{k-1}%282i%29=P_{k-2}%28i%29,\qquad\qquad1\le%20i\le%202^{k-2})
 
-   ![](http://latex.codecogs.com/gif.latex?P_k%284i-3%29=P_{k-1}_%282i-1%29=P_{k-2}_%28i%29,\quad1\le%20i\le%202^{k-2})
+   ![](http://latex.codecogs.com/gif.latex?P_k%284i-3%29=P_{k-1}%282i-1%29=P_{k-2}%28i%29,\quad1\le%20i\le%202^{k-2})
 
 1) 构造序列的后半段（模4余2或余3）：
 
@@ -274,9 +274,9 @@
 
    ......
 
-   ![](http://latex.codecogs.com/gif.latex?P_k_%284i-1%29=2^k-P_k_%284i%29+1=2^k-P_{k-2}_%28i%29+1,\qquad\quad1\le%20i\le%202^{k-2})
+   ![](http://latex.codecogs.com/gif.latex?P_k_%284i-1%29=2^k-P_k_%284i%29+1=2^k-P_{k-2}%28i%29+1,\qquad\quad1\le%20i\le%202^{k-2})
 
-   ![](http://latex.codecogs.com/gif.latex?P_k_%284i-2%29=2^k-P_k_%284i-3%29+1=2^k-P_{k-2}_%28i%29+1,\quad1\le%20i\le%202^{k-2})
+   ![](http://latex.codecogs.com/gif.latex?P_k_%284i-2%29=2^k-P_k_%284i-3%29+1=2^k-P_{k-2}%28i%29+1,\quad1\le%20i\le%202^{k-2})
 
 根据对称性，求序列位置上的数字的公式也是完全一样的。
 
@@ -473,7 +473,7 @@
 ### 中间数
 
 此外，与一阶对折情况类似地，结果序列（并非方阵）排在中间的两个数字也值得关注：
-* （结论10）结果序列中，位于正中间的两个数的值是连续的，较小的那一个是奇数并且排在前面，两个数分别是呈2的幂次数变化，也就是说，4是最右边的第![](http://latex.codecogs.com/gif.latex?2^{k-4})个数，换算成一维结果，则是第![](http://latex.codecogs.com/gif.latex?2^k+1})和![](http://latex.codecogs.com/gif.latex?2^k+2})
+* （结论10）结果序列中，位于正中间的两个数的值是连续的，较小的那一个是奇数并且排在前面，两个数分别是呈2的幂次数变化，也就是说，4是最右边的第![](http://latex.codecogs.com/gif.latex?2^{k-4})个数，换算成一维结果，则是第![](http://latex.codecogs.com/gif.latex?2^k+1)和![](http://latex.codecogs.com/gif.latex?2^k+2)
 
   ![](http://latex.codecogs.com/gif.latex?\begin{cases}P%282^k+1%29=2^{2k-1}\\\\P%282^k+2%29=2^{2k-1}+1\end{cases})
 
@@ -638,11 +638,11 @@
 
 继而你可以发现，整个下半区只要是对称的两列，全部服从这种“**半中心对称**”规律！
 
-![](http://latex.codecogs.com/gif.latex?\begin{cases}P%28x+1%29=4^k+4^{k-1}-P%28x%29+1,&\textrm{x%20is%20even},%200\le%20i<2^{k-2}\\\\P%28x%29=4^k+4^{k-1}-P%28x-1%29+1,&\textrm{x%20is%20odd},%200\le%20i<2^{k-2}\\\\P%28x+1%29=4^k+4^{k-1}+2^{2k-1}}-P%28x%29+1,&\textrm{x%20is%20even},%202^{k-2}}\le%20i<2^{k-1}\\\\P%28x%29=4^k+4^{k-1}+2^{2k-1}}-P%28x-1%29+1,&\textrm{x%20is%20odd},%202^{k-2}}\le%20i<2^{k-1}\end{cases},\quad2^{2k-1}+2^ki+1\le%20P%28x%29<2^{2k-1}+2^ki+2^k)
+![](http://latex.codecogs.com/gif.latex?\begin{cases}P%28x+1%29=4^k+4^{k-1}-P%28x%29+1,&\textrm{x%20is%20even},%200\le%20i<2^{k-2}\\\\P%28x%29=4^k+4^{k-1}-P%28x-1%29+1,&\textrm{x%20is%20odd},%200\le%20i<2^{k-2}\\\\P%28x+1%29=4^k+4^{k-1}+2^{2k-1}-P%28x%29+1,&\textrm{x%20is%20even},%202^{k-2}\le%20i<2^{k-1}\\\\P%28x%29=4^k+4^{k-1}+2^{2k-1}-P%28x-1%29+1,&\textrm{x%20is%20odd},%202^{k-2}\le%20i<2^{k-1}\end{cases},\quad2^{2k-1}+2^ki+1\le%20P%28x%29<2^{2k-1}+2^ki+2^k)
 
 利用-1的奇偶幂次正负交变的性质，上式可以简化为——
 
-![](http://latex.codecogs.com/gif.latex?\begin{cases}P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}-P%28x+{%28-1%29^x-1\over2}%29+1,&\rm{0\le%20i<2^{k-2}}\\\\P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}+2^{2k-1}}-P%28x+{%28-1%29^x-1\over2}%29+1,&\rm{2^{k-2}}\le%20i<2^{k-1}}\end{cases},\quad2^{2k-1}+2^ki+1\le%20P%28x%29<2^{2k-1}+2^ki+2^k)
+![](http://latex.codecogs.com/gif.latex?\begin{cases}P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}-P%28x+{%28-1%29^x-1\over2}%29+1,&\rm{0\le%20i<2^{k-2}}\\\\P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}+2^{2k-1}-P%28x+{%28-1%29^x-1\over2}%29+1,&\rm{2^{k-2}\le%20i<2^{k-1}}\end{cases},\quad2^{2k-1}+2^ki+1\le%20P%28x%29<2^{2k-1}+2^ki+2^k)
 
 若定义二值函数
 
@@ -650,11 +650,11 @@
 
 又可以进一步简化为——
 
-![](http://latex.codecogs.com/gif.latex?P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}+Bool%28i-2^{k-2}%29\cdot2^{2k-1}}-P%28x+{%28-1%29^x-1\over2}%29+1,\quad0\le%20i<2^{k-1},\quad2^{2k-1}+2^ki+1\le%20P%28x%29<2^{2k-1}+2^ki+2^k)
+![](http://latex.codecogs.com/gif.latex?P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}+Bool%28i-2^{k-2}%29\cdot2^{2k-1}-P%28x+{%28-1%29^x-1\over2}%29+1,\quad0\le%20i<2^{k-1},\quad2^{2k-1}+2^ki+1\le%20P%28x%29<2^{2k-1}+2^ki+2^k)
 
 或
 
-![](http://latex.codecogs.com/gif.latex?P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}+Bool%28floor%28{x-2^{2k-1}-1\over2^k}%29-2^{k-2}%29\cdot2^{2k-1}}-P%28x+{%28-1%29^x-1\over2}%29+1,\quad2^{2k-1}+1\le%20P%28x%29\le4^k)
+![](http://latex.codecogs.com/gif.latex?P%28x+{%28-1%29^x+1\over2}%29=4^k+4^{k-1}+Bool%28floor%28{x-2^{2k-1}-1\over2^k}%29-2^{k-2}%29\cdot2^{2k-1}-P%28x+{%28-1%29^x-1\over2}%29+1,\quad2^{2k-1}+1\le%20P%28x%29\le4^k)
 
 ### 正规节与正规节组
 
@@ -756,33 +756,33 @@
 
 因此如果偶数x的位置P(x)能够正好落到一个“正规节”区间，那还是能够推算它的配对奇数的位置的。例如，对于中心节组——
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}2^{2k-2}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-3}+1\le%20P%28x%29\le2^{2k-3}+2^{2k-4}}\\\\2^{2k-2}+2^{2k-3}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-3}+2^{2k-4}+1\le%20P%28x%29\le2^{2k-2}}\\\\2^{2k-1}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-2}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-4}}\\\\2^{2k-1}+2^{2k-3}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-4}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}2^{2k-2}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-3}+1\le%20P%28x%29\le2^{2k-3}+2^{2k-4}}\\\\2^{2k-2}+2^{2k-3}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-3}+2^{2k-4}+1\le%20P%28x%29\le2^{2k-2}}\\\\2^{2k-1}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-2}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-4}}\\\\2^{2k-1}+2^{2k-3}+2^{2k-4}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-4}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}}\end{cases},\textrm{x%20is%20even})
 
 若以![](http://latex.codecogs.com/gif.latex?2^{2k-4})或者说![](http://latex.codecogs.com/gif.latex?4^{k-2})为基准单位，上式可整理为——
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-2}-P%28x%29+1,&\rm{2\times4^{k-2}+1\le%20P%28x%29\le3\times4^{k-2}}\\\\7\times4^{k-2}-P%28x%29+1,&\rm{3\times4^{k-2}+1\le%20P%28x%29\le4\times4^{k-2}}\\\\9\times4^{k-2}-P%28x%29+1,&\rm{4\times4^{k-2}+1\le%20P%28x%29\le5\times4^{k-2}}\\\\11\times4^{k-2}-P%28x%29+1,&\rm{5\times4^{k-2}+1\le%20P%28x%29\le6\times4^{k-2}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-2}-P%28x%29+1,&\rm{2\times4^{k-2}+1\le%20P%28x%29\le3\times4^{k-2}}\\\\7\times4^{k-2}-P%28x%29+1,&\rm{3\times4^{k-2}+1\le%20P%28x%29\le4\times4^{k-2}}\\\\9\times4^{k-2}-P%28x%29+1,&\rm{4\times4^{k-2}+1\le%20P%28x%29\le5\times4^{k-2}}\\\\11\times4^{k-2}-P%28x%29+1,&\rm{5\times4^{k-2}+1\le%20P%28x%29\le6\times4^{k-2}}\end{cases},\textrm{x%20is%20even})
 
 同理可以计算落到比中心节组“次一级”的正规节区间的偶数，其后继奇数的位置——
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}2^{2k-2}-2^{2k-3}-2^{2k-4}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}-2^{2k-5}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}-2^{2k-5}+2^{2k-6}}\\\\2^{2k-2}-2^{2k-3}-2^{2k-4}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}-2^{2k-5}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}}\\\\2^{2k-2}-2^{2k-3}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}+2^{2k-6}}\\\\2^{2k-2}-2^{2k-3}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}+2^{2k-5}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}2^{2k-2}-2^{2k-3}-2^{2k-4}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}-2^{2k-5}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}-2^{2k-5}+2^{2k-6}}\\\\2^{2k-2}-2^{2k-3}-2^{2k-4}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}-2^{2k-5}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}}\\\\2^{2k-2}-2^{2k-3}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}+2^{2k-6}}\\\\2^{2k-2}-2^{2k-3}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-3}-2^{2k-4}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-3}-2^{2k-4}+2^{2k-5}}\end{cases},\textrm{x%20is%20even})
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}2^{2k-1}+2^{2k-2}+2^{2k-4}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-5}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-5}+2^{2k-6}}\\\\2^{2k-1}+2^{2k-2}+2^{2k-4}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-5}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-4}}\\\\2^{2k-1}+2^{2k-2}+2^{2k-3}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-4}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-4}+2^{2k-6}}\\\\2^{2k-1}+2^{2k-2}+2^{2k-3}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-4}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-4}+2^{2k-5}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}2^{2k-1}+2^{2k-2}+2^{2k-4}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-5}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-5}+2^{2k-6}}\\\\2^{2k-1}+2^{2k-2}+2^{2k-4}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-5}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-4}}\\\\2^{2k-1}+2^{2k-2}+2^{2k-3}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-4}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-4}+2^{2k-6}}\\\\2^{2k-1}+2^{2k-2}+2^{2k-3}+2^{2k-5}+2^{2k-6}-P%28x%29+1,&\rm{2^{2k-2}+2^{2k-3}+2^{2k-4}+2^{2k-6}+1\le%20P%28x%29\le2^{2k-2}+2^{2k-3}+2^{2k-4}+2^{2k-5}}\end{cases},\textrm{x%20is%20even})
 
 若以![](http://latex.codecogs.com/gif.latex?2^{2k-6})或者说![](http://latex.codecogs.com/gif.latex?4^{k-3})为基准单位，上两式可整理为——
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-3}-P%28x%29+1,&\rm{2\times4^{k-3}+1\le%20P%28x%29\le3\times4^{k-3}}\\\\7\times4^{k-3}-P%28x%29+1,&\rm{3\times4^{k-3}+1\le%20P%28x%29\le4\times4^{k-3}}\\\\9\times4^{k-3}-P%28x%29+1,&\rm{4\times4^{k-3}+1\le%20P%28x%29\le5\times4^{k-3}}\\\\11\times4^{k-3}-P%28x%29+1,&\rm{5\times4^{k-3}+1\le%20P%28x%29\le6\times4^{k-3}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-3}-P%28x%29+1,&\rm{2\times4^{k-3}+1\le%20P%28x%29\le3\times4^{k-3}}\\\\7\times4^{k-3}-P%28x%29+1,&\rm{3\times4^{k-3}+1\le%20P%28x%29\le4\times4^{k-3}}\\\\9\times4^{k-3}-P%28x%29+1,&\rm{4\times4^{k-3}+1\le%20P%28x%29\le5\times4^{k-3}}\\\\11\times4^{k-3}-P%28x%29+1,&\rm{5\times4^{k-3}+1\le%20P%28x%29\le6\times4^{k-3}}\end{cases},\textrm{x%20is%20even})
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}53\times4^{k-3}-P%28x%29+1,&\rm{26\times4^{k-3}+1\le%20P%28x%29\le27\times4^{k-3}}\\\\55\times4^{k-3}-P%28x%29+1,&\rm{27\times4^{k-3}+1\le%20P%28x%29\le28\times4^{k-3}}\\\\57\times4^{k-3}-P%28x%29+1,&\rm{28\times4^{k-3}+1\le%20P%28x%29\le29\times4^{k-3}}\\\\59\times4^{k-3}-P%28x%29+1,&\rm{29\times4^{k-3}+1\le%20P%28x%29\le30\times4^{k-3}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}53\times4^{k-3}-P%28x%29+1,&\rm{26\times4^{k-3}+1\le%20P%28x%29\le27\times4^{k-3}}\\\\55\times4^{k-3}-P%28x%29+1,&\rm{27\times4^{k-3}+1\le%20P%28x%29\le28\times4^{k-3}}\\\\57\times4^{k-3}-P%28x%29+1,&\rm{28\times4^{k-3}+1\le%20P%28x%29\le29\times4^{k-3}}\\\\59\times4^{k-3}-P%28x%29+1,&\rm{29\times4^{k-3}+1\le%20P%28x%29\le30\times4^{k-3}}\end{cases},\textrm{x%20is%20even})
 
 依此类推再次一级的正规节组——
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-4}-P%28x%29+1,&\rm{2\times4^{k-4}+1\le%20P%28x%29\le3\times4^{k-4}}\\\\7\times4^{k-4}-P%28x%29+1,&\rm{3\times4^{k-4}+1\le%20P%28x%29\le4\times4^{k-4}}\\\\9\times4^{k-4}-P%28x%29+1,&\rm{4\times4^{k-4}+1\le%20P%28x%29\le5\times4^{k-4}}\\\\11\times4^{k-4}-P%28x%29+1,&\rm{5\times4^{k-4}+1\le%20P%28x%29\le6\times4^{k-4}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-4}-P%28x%29+1,&\rm{2\times4^{k-4}+1\le%20P%28x%29\le3\times4^{k-4}}\\\\7\times4^{k-4}-P%28x%29+1,&\rm{3\times4^{k-4}+1\le%20P%28x%29\le4\times4^{k-4}}\\\\9\times4^{k-4}-P%28x%29+1,&\rm{4\times4^{k-4}+1\le%20P%28x%29\le5\times4^{k-4}}\\\\11\times4^{k-4}-P%28x%29+1,&\rm{5\times4^{k-4}+1\le%20P%28x%29\le6\times4^{k-4}}\end{cases},\textrm{x%20is%20even})
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}53\times4^{k-4}-P%28x%29+1,&\rm{26\times4^{k-4}+1\le%20P%28x%29\le27\times4^{k-4}}\\\\55\times4^{k-4}-P%28x%29+1,&\rm{27\times4^{k-4}+1\le%20P%28x%29\le28\times4^{k-4}}\\\\57\times4^{k-4}-P%28x%29+1,&\rm{28\times4^{k-4}+1\le%20P%28x%29\le29\times4^{k-4}}\\\\59\times4^{k-4}-P%28x%29+1,&\rm{29\times4^{k-4}+1\le%20P%28x%29\le30\times4^{k-4}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}53\times4^{k-4}-P%28x%29+1,&\rm{26\times4^{k-4}+1\le%20P%28x%29\le27\times4^{k-4}}\\\\55\times4^{k-4}-P%28x%29+1,&\rm{27\times4^{k-4}+1\le%20P%28x%29\le28\times4^{k-4}}\\\\57\times4^{k-4}-P%28x%29+1,&\rm{28\times4^{k-4}+1\le%20P%28x%29\le29\times4^{k-4}}\\\\59\times4^{k-4}-P%28x%29+1,&\rm{29\times4^{k-4}+1\le%20P%28x%29\le30\times4^{k-4}}\end{cases},\textrm{x%20is%20even})
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}197\times4^{k-4}-P%28x%29+1,&\rm{98\times4^{k-4}+1\le%20P%28x%29\le99\times4^{k-4}}\\\\199\times4^{k-4}-P%28x%29+1,&\rm{99\times4^{k-4}+1\le%20P%28x%29\le100\times4^{k-4}}\\\\201\times4^{k-4}-P%28x%29+1,&\rm{100\times4^{k-4}+1\le%20P%28x%29\le101\times4^{k-4}}\\\\203\times4^{k-4}-P%28x%29+1,&\rm{101\times4^{k-4}+1\le%20P%28x%29\le102\times4^{k-4}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}197\times4^{k-4}-P%28x%29+1,&\rm{98\times4^{k-4}+1\le%20P%28x%29\le99\times4^{k-4}}\\\\199\times4^{k-4}-P%28x%29+1,&\rm{99\times4^{k-4}+1\le%20P%28x%29\le100\times4^{k-4}}\\\\201\times4^{k-4}-P%28x%29+1,&\rm{100\times4^{k-4}+1\le%20P%28x%29\le101\times4^{k-4}}\\\\203\times4^{k-4}-P%28x%29+1,&\rm{101\times4^{k-4}+1\le%20P%28x%29\le102\times4^{k-4}}\end{cases},\textrm{x%20is%20even})
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}245\times4^{k-4}-P%28x%29+1,&\rm{122\times4^{k-4}+1\le%20P%28x%29\le123\times4^{k-4}}\\\\247\times4^{k-4}-P%28x%29+1,&\rm{123\times4^{k-4}+1\le%20P%28x%29\le124\times4^{k-4}}\\\\249\times4^{k-4}-P%28x%29+1,&\rm{124\times4^{k-4}+1\le%20P%28x%29\le125\times4^{k-4}}\\\\251\times4^{k-4}-P%28x%29+1,&\rm{125\times4^{k-4}+1\le%20P%28x%29\le126\times4^{k-4}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}245\times4^{k-4}-P%28x%29+1,&\rm{122\times4^{k-4}+1\le%20P%28x%29\le123\times4^{k-4}}\\\\247\times4^{k-4}-P%28x%29+1,&\rm{123\times4^{k-4}+1\le%20P%28x%29\le124\times4^{k-4}}\\\\249\times4^{k-4}-P%28x%29+1,&\rm{124\times4^{k-4}+1\le%20P%28x%29\le125\times4^{k-4}}\\\\251\times4^{k-4}-P%28x%29+1,&\rm{125\times4^{k-4}+1\le%20P%28x%29\le126\times4^{k-4}}\end{cases},\textrm{x%20is%20even})
 
 由于每一级节组均匀等距分布于它的上一级节组的两侧，我们可以计算它们的间距
 * （结论24）假定本级节组的基准单位为u（一般为![](http://latex.codecogs.com/gif.latex?4^{k-i})形式，是节容m的两倍），则距离它的高一级节组的最近间隔是**2u**。
@@ -791,7 +791,7 @@
 
 由于下半区可视为k+1次序列的中心节组的前半段（两个![](http://latex.codecogs.com/gif.latex?2^{2k-2})-正规节），故结论19中的所谓“半中心对称规律”也可以用统一化的表示——
 
-![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-1}-P%28x%29+1,&\rm{2\times4^{k-1}+1\le%20P%28x%29\le3\times4^{k-1}}\\\\7\times4^{k-1}-P%28x%29+1,&\rm{3\times4^{k-1}+1\le%20P%28x%29\le4\times4^{k-1}}\end{cases},&\textrm{x%20is%20even})
+![](http://latex.codecogs.com/gif.latex?P%28x+1%29=\begin{cases}5\times4^{k-1}-P%28x%29+1,&\rm{2\times4^{k-1}+1\le%20P%28x%29\le3\times4^{k-1}}\\\\7\times4^{k-1}-P%28x%29+1,&\rm{3\times4^{k-1}+1\le%20P%28x%29\le4\times4^{k-1}}\end{cases},\textrm{x%20is%20even})
 
 至此，**我们可以定位到所有落在结果序列的正规节内的偶先数对的位置了**。那么二阶对折问题只剩下最后一道坎：非正规节内的偶先数对。
 
@@ -917,7 +917,7 @@
 
 1) 从第一个数1开始，若遇到奇数，则使用“**中心对称规律**”（结论11），得到下一个偶数位置为
 
-   ![](http://latex.codecogs.com/gif.latex?P%28x+1%29=4^k-P%28x%29+1,\quad&\textrm{x%20is%20odd})
+   ![](http://latex.codecogs.com/gif.latex?P%28x+1%29=4^k-P%28x%29+1,\quad\textrm{x%20is%20odd})
 
    进入下一步
 
